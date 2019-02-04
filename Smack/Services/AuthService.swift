@@ -96,12 +96,12 @@ class AuthService{
         }
     }
     
-    func createUser(name:String, email:String, avatarName:String, avatarColor:String, completion: @escaping CompletionHandler){
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler){
         let lowerCaseEmail = email.lowercased()
         
         let body: [String: Any] = [
-            "email": lowerCaseEmail,
             "name": name,
+            "email": lowerCaseEmail,
             "avatarName": avatarName,
             "avatarColor": avatarColor,
             ]

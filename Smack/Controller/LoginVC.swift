@@ -39,7 +39,7 @@ class LoginVC: UIViewController {
                     if success{
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                         self.spinner.isHidden = true
-                        self.spinner.startAnimating()
+                        self.spinner.stopAnimating()
                         self.dismiss(animated: true, completion: nil)
                     }
                 })

@@ -16,6 +16,7 @@ class MessageService{
     
     var channels = [Channel]()
     var messages = [Message]()
+    var unreadChannels = [String]()
     var selectedChannel : Channel? 
     
     func findAllChannel(completion: @escaping CompletionHandler){
@@ -68,7 +69,7 @@ class MessageService{
                         let userAvatarColor = item["userAvatarColor"].stringValue
                         let timeStamp = item["timeStamp"].stringValue
                     
-                        let message = Message(message: messageBody,userName: userName,channelId: channelId, userAvatar:userAvatar, userAvatarColor: userAvatarColor, id: id, timestamp:timeStamp)
+                        let message = Message(message: messageBody,userName: userName,channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timestamp: timeStamp)
                         self.messages.append(message)
                         
                     }

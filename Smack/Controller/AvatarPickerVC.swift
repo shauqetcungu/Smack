@@ -39,10 +39,6 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         return 28
     }
     
-    @IBAction func backPressed(_ sender: Any) {
-        dismiss(animated: true
-            , completion: nil)
-    }
     @IBAction func segmentControlChanged(_ sender: Any) {
         if segmentControl.selectedSegmentIndex == 0 {
             avatarType = .dark
@@ -74,5 +70,10 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
             UserDataService.instance.setAvatarName(avatarName: "light\(indexPath.item)")
         }
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true
+            , completion: nil)
     }
 }
